@@ -1,0 +1,26 @@
+spring:
+  webflux:
+    base-path: /api
+configuration:
+  consumer-number: 1
+  consumer-backoff: 2000
+  callback-endpoints:
+    7d8b04f4-a056-11ec-b909-0242ac120002 : "http://localhost:8080/email/callback"
+  kafka:
+    bootstrapServer: localhost:9092
+    topic: demo-topic1
+    group: example-group
+    clientId: my-clientId
+  email:
+    sending-batch: 5
+    server:
+      host: dummy-host
+      port: dummy-port
+management:
+  metrics:
+    enable:
+      all: true
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health
